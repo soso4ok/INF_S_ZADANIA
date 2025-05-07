@@ -27,12 +27,21 @@ public class ParallelSorter {
             throw new IllegalArgumentException("Number of partitions must be positivee");
         }
         if (numPartitions == 1 || list.size() < numPartitions * 2) {
-            //return sequentialSort(list);
+            return sequentialSort(list);
         }
 
 
 
         return null;
+    }
+
+    /**
+     * Sorts a list of integers
+     */
+    public List<Integer> sequentialSort(List<Integer> list) {
+        List<Integer> copy = new ArrayList<>(list);
+        Collections.sort(copy);
+        return copy;
     }
 
 
